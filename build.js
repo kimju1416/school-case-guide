@@ -30,6 +30,10 @@ for (const q of cfg.quick) if (!ids.has(q.id)) problems.push(`빠른 찾기 «${
 let contacts = [], sources = [];
 if (fs.existsSync(path.join(R, 'contacts.json'))) contacts = read('contacts.json');
 if (fs.existsSync(path.join(R, 'sources.json'))) sources = read('sources.json');
+// 전국판: 경북 전용 번호는 싣지 않는다
+const isLocal = x => /경북|경상북도|^054-/.test((x.name || '') + ' ' + (x.tel || '')) || /^054-/.test(x.tel || '');
+contacts = contacts.filter(x => !isLocal(x));
+cases.forEach(c => { c.contacts = (c.contacts || []).filter(x => !isLocal(x)); });
 contacts = contacts.map(x => Object.assign({}, x, cfg.contactGroup(x)));
 
 const data = { updated: cfg.updated, cases, contacts, sources, quick: cfg.quick.filter(q => ids.has(q.id)), roleGroups: cfg.roleGroups };

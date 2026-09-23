@@ -21,7 +21,7 @@
 <meta name="twitter:image" content="https://kimju1416.github.io/school-case-guide/og.jpg">
 <link rel="canonical" href="https://kimju1416.github.io/school-case-guide/">
 <meta name="theme-color" content="#F6F8FB">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232456A6'/%3E%3Cpath d='M9 10h9M9 16h14M9 22h7' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='23' cy='10' r='3' fill='%23F5B7AE'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg width='40' height='44' viewBox='0 0 40 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 2.5 35 8v12.2c0 10.2-6.3 17.6-15 21.3C11.3 37.8 5 30.4 5 20.2V8z' fill='%232456A6'/%3E%3Cpath d='M20 2.5 35 8v12.2c0 10.2-6.3 17.6-15 21.3z' fill='%231C4487'/%3E%3Cpath d='M13 13.5h7.5a4 4 0 0 1 0 8H17a4 4 0 0 0 0 8h1' stroke='%23fff' stroke-width='2' stroke-linecap='round' opacity='.55'/%3E%3Ccircle cx='12.6' cy='13.5' r='2.7' fill='%23F28B74'/%3E%3Cpath d='m19.5 29.5 3 3 6.5-7.5' stroke='%23fff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{
@@ -40,11 +40,12 @@ button,select,input{font:inherit;color:inherit}
 .num{font-variant-numeric:tabular-nums}
 
 /* 앱바 */
-.bar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}
+.bar{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
 .bar .wrap{display:flex;align-items:center;gap:14px;height:64px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tx);min-width:0}
 .brand svg{flex:none}
-.brand b{display:block;font-size:18px;font-weight:800;letter-spacing:-.02em;line-height:1.2;white-space:nowrap}
+.brand b{display:block;font-size:18px;font-weight:800;letter-spacing:-.03em;line-height:1.2;white-space:nowrap}
+.brand b em{font-style:normal;color:var(--pt)}
 .brand small{display:block;font-size:12.5px;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .nav{display:flex;gap:2px;margin-left:auto}
 .nav a{padding:8px 13px;border-radius:var(--r1);text-decoration:none;color:var(--tx2);font-size:14px;font-weight:600;white-space:nowrap}
@@ -78,9 +79,9 @@ button,select,input{font:inherit;color:inherit}
 .quick button:hover{border-color:var(--pt);color:var(--pt);background:var(--pt-soft)}
 
 /* 첫 화면 머리 그림 */
-.hero{position:relative;overflow:hidden;background:#F3F6FB;border-bottom:1px solid var(--line)}
+.hero{position:relative;overflow:hidden;background:#EFF3FB;border-bottom:1px solid var(--line)}
 .hero-img{position:absolute;right:max(-60px, calc((100vw - 1240px) / 2 - 140px));top:50%;transform:translateY(-50%);height:118%;width:auto;max-width:none;pointer-events:none;user-select:none}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#F3F6FB 0%,#F3F6FB 34%,rgba(243,246,251,.85) 46%,rgba(243,246,251,0) 62%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#EFF3FB 0%,#EFF3FB 34%,rgba(239,243,251,.85) 46%,rgba(239,243,251,0) 62%);pointer-events:none}
 .hero .wrap{position:relative;z-index:1;padding-top:44px;padding-bottom:40px}
 .hero-t{max-width:560px}
 .eyebrow{margin:0 0 10px;font-size:13px;font-weight:700;color:var(--pt);letter-spacing:.01em}
@@ -92,7 +93,7 @@ button,select,input{font:inherit;color:inherit}
 .quickbar{background:var(--card);border-bottom:1px solid var(--line)}
 .quickbar .quick{margin:0;padding:12px 0}
 @media (max-width:1080px){
-  .hero::after{background:linear-gradient(90deg,#F3F6FB 0%,#F3F6FB 45%,rgba(243,246,251,.8) 60%,rgba(243,246,251,.2) 80%)}
+  .hero::after{background:linear-gradient(90deg,#EFF3FB 0%,#EFF3FB 45%,rgba(239,243,251,.8) 60%,rgba(239,243,251,.2) 80%)}
 }
 @media (max-width:860px){
   .hero-img{position:static;transform:none;display:block;width:100%;height:auto;margin:0 auto;object-fit:cover;object-position:70% 50%;aspect-ratio:16/8}
@@ -413,7 +414,7 @@ details.faq .a{padding:0 18px 14px 44px;font-size:14.5px;color:var(--tx2)}
   .brand b{font-size:16px}
   .nav a{padding:7px 9px;font-size:13.5px}
   .hide-s{display:none}
-  .brand svg{width:30px;height:30px}
+  .brand svg{width:28px;height:31px}
   .nav{gap:0}
   .search input{padding-left:16px}
   .search label{display:none}
@@ -459,8 +460,8 @@ details.faq .a{padding:0 18px 14px 44px;font-size:14.5px;color:var(--tx2)}
 <body>
 <header class="bar"><div class="wrap">
   <a class="brand" href="#/" aria-label="처음으로">
-    <svg width="36" height="36" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2456A6"/><path d="M9 10h9M9 16h14M9 22h7" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="23" cy="10" r="3" fill="#F5B7AE"/></svg>
-    <span><b><span class="hide-s">학교 </span>사안 처리 길잡이</b><small>사안이 생겼을 때 · 지금 할 일 · 기한 · 근거 법령 · 업무 흐름도</small></span>
+    <svg width="34" height="37" viewBox="0 0 40 44" fill="none" aria-hidden="true"><path d="M20 2.5 35 8v12.2c0 10.2-6.3 17.6-15 21.3C11.3 37.8 5 30.4 5 20.2V8z" fill="#2456A6"/><path d="M20 2.5 35 8v12.2c0 10.2-6.3 17.6-15 21.3z" fill="#1C4487"/><path d="M13 13.5h7.5a4 4 0 0 1 0 8H17a4 4 0 0 0 0 8h1" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".55"/><circle cx="12.6" cy="13.5" r="2.7" fill="#F28B74"/><path d="m19.5 29.5 3 3 6.5-7.5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span><b><span class="hide-s">학교 </span>사안 처리 <em>길잡이</em></b><small>사안이 생겼을 때 · 지금 할 일 · 기한 · 근거 법령 · 업무 흐름도</small></span>
   </a>
   <nav class="nav">
     <a href="#/" data-nav="home">사안<span class="hide-s"> 목록</span></a>
@@ -995,7 +996,7 @@ function renderContacts(){
     <p class="lead">번호를 누르면 바로 전화가 걸립니다. 공식 누리집에서 확인한 번호만 실었습니다(확인일 ${esc(DATA.updated)}).</p>
     ${Object.entries(groups).map(([g, arr]) => `<h2>${esc(g)}</h2><div class="card">${arr.map(ctRow).join('')}</div>`).join('')}
     <h2>학교에서 미리 적어 둘 번호</h2>
-    <div class="card plain"><ul><li>소속 교육지원청 학교폭력 담당(전담조사관 요청)</li><li>소속 교육지원청 교육활동 보호 담당·Wee센터</li><li>관할 경찰서 학교전담경찰관(SPO)</li><li>관할 아동보호전문기관·정신건강복지센터·보건소</li><li>가까운 응급실이 있는 병원</li></ul></div>
+    <div class="card plain"><ul><li>소속 교육지원청 학교폭력 담당(전담조사관 요청)</li><li>소속 교육지원청 교육활동 보호 담당·Wee센터, 시·도 교육활동보호센터(지역번호+1395)</li><li>시·도 학교안전공제회</li><li>관할 경찰서 학교전담경찰관(SPO)</li><li>관할 아동보호전문기관·정신건강복지센터·보건소</li><li>가까운 응급실이 있는 병원</li></ul></div>
   </div>`;
   window.scrollTo(0, 0);
 }
@@ -1008,7 +1009,7 @@ function renderAbout(){
     <div class="note"><b>꼭 읽어 주세요</b><ul>
       <li>법령과 교육부·교육청 매뉴얼 원문을 요약한 참고용입니다. 최종 판단은 원문과 소속 교육청 안내를 따르세요.</li>
       <li>법령과 지침은 자주 바뀝니다. 각 사안의 출처와 확인일을 함께 보세요. 이 판의 기준일은 ${esc(DATA.updated)}입니다.</li>
-      <li>경상북도 기준으로 정리했습니다. 시·도마다 담당 기관과 절차가 조금씩 다를 수 있습니다.</li>
+      <li>전국 공통(법령·교육부 자료) 기준으로 정리했습니다. 시·도마다 담당 기관·번호·세부 절차가 다를 수 있으니 소속 교육청 안내를 함께 확인하세요.</li>
       <li>2021년 이후 발행된 자료만 근거로 썼습니다.</li>
       <li>이 사이트는 아무것도 서버에 보내지 않습니다. 체크 표시는 이 기기 브라우저에만 남고, 기록 메모는 창을 닫으면 지워집니다.</li>
     </ul></div>

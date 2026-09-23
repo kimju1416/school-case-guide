@@ -134,12 +134,12 @@ button,select,input{font:inherit;color:inherit}
 .kpi span{font-size:12.5px;color:var(--sub)}
 .kpi.w b{color:var(--warn)}
 
-.now{background:var(--card);border:1px solid #F0D2CE;border-radius:var(--r2);display:grid;grid-template-columns:150px 1fr;overflow:hidden;margin-bottom:26px}
-.now .h{background:var(--err-bg);padding:16px 18px;color:var(--err);font-weight:800;font-size:15px;line-height:1.4}
-.now .h small{display:block;font-weight:500;font-size:12.5px;margin-top:4px;color:#9A3A2E}
-.now ol{margin:0;padding:12px 18px 12px 18px;list-style:none;counter-reset:n;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4px 22px}
-.now li{counter-increment:n;padding:6px 0 6px 30px;position:relative;font-weight:600;font-size:15px;line-height:1.5}
-.now li::before{content:counter(n);position:absolute;left:0;top:6px;width:21px;height:21px;border-radius:50%;background:var(--err);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.nowbox{background:var(--card);border:1px solid #F0D2CE;border-radius:var(--r2);display:grid;grid-template-columns:150px 1fr;overflow:hidden;margin-bottom:26px}
+.nowbox .h{background:var(--err-bg);padding:16px 18px;color:var(--err);font-weight:800;font-size:15px;line-height:1.4}
+.nowbox .h small{display:block;font-weight:500;font-size:12.5px;margin-top:4px;color:#9A3A2E}
+.nowbox ol{margin:0;padding:12px 18px 12px 18px;list-style:none;counter-reset:n;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4px 22px}
+.nowbox li{counter-increment:n;padding:6px 0 6px 30px;position:relative;font-weight:600;font-size:15px;line-height:1.5}
+.nowbox li::before{content:counter(n);position:absolute;left:0;top:6px;width:21px;height:21px;border-radius:50%;background:var(--err);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
 
 .sec{margin:0 0 30px}
 .sech{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:12px;flex-wrap:wrap}
@@ -152,8 +152,10 @@ button,select,input{font:inherit;color:inherit}
 .lg-wait{border-color:#CBD5E1!important;background:#fff}
 
 /* 업무 흐름도 */
-.flowbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
+.flowbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r2);overflow:clip}
 .flowscroll{overflow-x:auto;position:relative}
+.flowscroll.fit{overflow:visible}
+.flowscroll.fit .ch,.flowscroll.fit .corner{position:sticky;top:64px;z-index:5}
 .flow{position:relative;display:grid}
 .flow .ch{background:var(--head);border-bottom:1px solid var(--line);padding:10px 14px;font-size:12.5px;font-weight:700;color:var(--sub)}
 .flow .ch b{display:block;color:var(--tx);font-size:14px}
@@ -164,7 +166,8 @@ button,select,input{font:inherit;color:inherit}
 .node{display:block;position:relative;z-index:2;background:#fff;border:1.5px solid #CBD5E1;border-radius:var(--r1);padding:7px 10px 8px;cursor:pointer;text-align:left;width:100%;font-size:13.5px;line-height:1.4;font-weight:600;color:var(--tx)}
 .node:hover{border-color:var(--pt)}
 .node .nh{display:flex;justify-content:space-between;font-size:11px;font-weight:800;color:var(--sub);margin-bottom:2px;letter-spacing:.03em}
-.node .nt{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.node .nt{display:block}
+.node .nx{display:block;margin-top:4px;font-size:11.5px;font-weight:600;color:var(--sub)}
 .node.done{border-color:var(--ok);background:var(--ok-bg)}
 .node.done .nh span{color:var(--ok)}
 .node.now{border-color:var(--pt);border-width:2px;background:var(--pt-soft);box-shadow:0 0 0 3px rgba(36,86,166,.12)}
@@ -200,6 +203,41 @@ button,select,input{font:inherit;color:inherit}
 .xt table.t td{font-size:14px}
 .xt table.t td.k0{font-weight:700;white-space:nowrap}
 .xtn{padding:10px 16px;font-size:12.5px;color:var(--sub);border-top:1px solid var(--line2);background:var(--head)}
+
+.how{margin:8px 0 0;padding:0;list-style:none;counter-reset:h}
+.how li{counter-increment:h;position:relative;padding:3px 0 3px 26px;font-size:14.5px;color:var(--tx2)}
+.how li::before{content:counter(h);position:absolute;left:0;top:5px;width:18px;height:18px;border-radius:5px;background:var(--pt-soft);color:var(--pt);font-size:11.5px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.xrow{display:flex;gap:8px;margin-top:10px;font-size:13.5px;align-items:flex-start}
+.xrow b{flex:none;font-size:12px;font-weight:800;color:var(--sub);padding-top:2px;min-width:44px}
+.xrow.sc{background:var(--head);border:1px solid var(--line2);border-radius:var(--r1);padding:9px 12px}
+.xrow.sc span{color:var(--tx)}
+.xrow.ck span{color:var(--warn)}
+.tip{position:fixed;z-index:60;max-width:380px;background:#1B2A41;color:#fff;border-radius:10px;padding:12px 14px;font-size:13.5px;line-height:1.55;pointer-events:none;opacity:0;transition:opacity .12s;box-shadow:0 8px 24px rgba(15,23,42,.25);left:-999px;top:0}
+.tip.on{opacity:1}
+.tip b{display:block;font-size:14px;margin-bottom:4px}
+.tip .tw{color:#AFC2DD;font-size:12px;margin-bottom:6px}
+.tip ol{margin:6px 0 0;padding-left:18px;color:#DCE5F2}
+.tip .more{margin-top:6px;color:#AFC2DD;font-size:12px}
+.drawer-bg{position:fixed;inset:0;background:rgba(15,23,42,.35);z-index:70;opacity:0;pointer-events:none;transition:opacity .18s}
+.drawer-bg.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(520px,100%);background:var(--card);z-index:71;transform:translateX(102%);transition:transform .22s ease;display:flex;flex-direction:column;box-shadow:-8px 0 30px rgba(15,23,42,.18);visibility:hidden}
+.drawer.on{transform:none;visibility:visible}
+.drawer .dh{display:flex;align-items:center;gap:8px;padding:10px 12px 10px 18px;border-bottom:1px solid var(--line)}
+.drawer .dh .k{font-size:12.5px;font-weight:800;color:var(--sub)}
+.drawer .dh .x{margin-left:auto;width:40px;height:40px;border:0;background:none;font-size:26px;cursor:pointer;color:var(--sub);line-height:1}
+.drawer .dbody{padding:18px 20px 24px;overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch}
+.drawer h3{margin:0 0 8px;font-size:20px;line-height:1.4;letter-spacing:-.01em}
+.drawer .det{color:var(--tx2);margin:0 0 6px;font-size:15px}
+.drawer dl{margin:16px 0 0;display:grid;grid-template-columns:52px 1fr;gap:6px 10px;font-size:14px;background:var(--head);border-radius:var(--r1);padding:12px 14px}
+.drawer dt{color:var(--sub);font-weight:600}
+.drawer dd{margin:0}
+.drawer .df{display:flex;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--line);align-items:center}
+.drawer .df .chk{margin:0 auto 0 0}
+.lbl2{font-size:12.5px;font-weight:800;color:var(--sub);margin:16px 0 2px}
+@media (max-width:860px){
+  .drawer{top:auto;left:0;width:100%;max-height:88vh;border-radius:16px 16px 0 0;transform:translateY(102%)}
+  .drawer.on{transform:none}
+}
 
 /* 목록형 흐름 */
 .steps{list-style:none;margin:0;padding:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r2)}
@@ -317,9 +355,9 @@ details.faq .a{padding:0 18px 14px 44px;font-size:14.5px;color:var(--tx2)}
   .dhead h1{font-size:24px}
   .ndetail{grid-template-columns:1fr}
   .ndetail .nd-r{border-left:0;border-top:1px solid var(--line2)}
-  .now{grid-template-columns:1fr}
-  .now .h{padding:12px 16px}
-  .now .h small{display:inline;margin-left:6px}
+  .nowbox{grid-template-columns:1fr}
+  .nowbox .h{padding:12px 16px}
+  .nowbox .h small{display:inline;margin-left:6px}
   .dbar select{flex:1}
   .dbar .lb{display:none}
 }
@@ -345,16 +383,31 @@ details.faq .a{padding:0 18px 14px 44px;font-size:14.5px;color:var(--tx2)}
   table.t tr:first-child{border-top:0}
   table.t th,table.t td{display:block;border-top:0;padding:2px 16px}
   table.t td.due{white-space:normal}
+
+  .xt table.t{min-width:0}
+  .xt table.t thead{display:none}
+  .xt table.t tr{display:block;padding:10px 16px;border-top:1px solid var(--line2)}
+  .xt table.t tr:first-child{border-top:0}
+  .xt table.t td{display:grid;grid-template-columns:92px 1fr;gap:8px;padding:3px 0;border:0;font-size:14px}
+  .xt table.t td::before{content:attr(data-h);font-size:12px;font-weight:700;color:var(--sub);padding-top:1px}
+  .xt table.t td.k0{white-space:normal;font-size:15px}
+  .deep summary{padding:13px 40px 13px 14px;font-size:15px}
+  .deep .db{padding:0 16px 14px 16px}
+  .nowbox li{font-size:15px}
+  .sec h2{font-size:18px}
+  .step{padding:12px 14px 12px 8px}
+  .how li{font-size:14px}
+  .xrow{flex-direction:column;gap:2px}
 }
 @media print{
-  .bar,.sos,.dbar,.acts,.toc,.memo,.foot,.step input,.seg,.calc,#s-flow,.chk{display:none!important}
+  .bar,.sos,.dbar,.acts,.toc,.memo,.foot,.step input,.seg,.calc,#s-flow,.chk,.tip,.drawer,.drawer-bg{display:none!important}
   body{background:#fff;font-size:12.5px}
   .cols{grid-template-columns:1fr}
   #steplist{display:block!important}
   details.faq .a,.deep .db{display:block}
   details.faq summary::after{display:none}
   a{color:inherit;text-decoration:none}
-  .card,.now,.kpis{break-inside:avoid}
+  .card,.nowbox,.kpis{break-inside:avoid}
 }
 </style>
 </head>
@@ -377,6 +430,9 @@ details.faq .a{padding:0 18px 14px 44px;font-size:14.5px;color:var(--tx2)}
 <main id="app"></main>
 <footer class="foot"><div class="wrap" id="foot"></div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="tip" id="tip" role="tooltip"></div>
+<div class="drawer-bg" id="drawerbg"></div>
+<aside class="drawer" id="drawer" aria-label="단계 자세히"></aside>
 
 <script>
 const DATA = /*__DATA__*/null;
@@ -407,12 +463,12 @@ const isMobile = () => window.matchMedia('(max-width:860px)').matches;
 
 /* ---------- 흐름도: 누가(레인) · 언제(단계) ---------- */
 const LANES = [
-  { k: 'teacher', name: '교사', re: /담임|교과|목격|알게 된|최초|인솔|발견한|교사(?!.*(책임|상담|보건))/ },
+  { k: 'teacher', name: '교사', re: /피해교원|해당 교원|교원 본인|담임|교과|목격|알게 된|최초|인솔|발견한|교사(?!.*(책임|상담|보건))/ },
   { k: 'staff', name: '담당 교사·전담기구', re: /책임교사|전담기구|보건교사|상담교사|전문상담|Wee ?클래스|담당|부장|성고충|위원회\(학교\)|학교 ?안전|영양|급식/ },
   { k: 'admin', name: '교감·교장', re: /교감|교장|학교장|관리자/ },
   { k: 'office', name: '교육지원청·교육청', re: /교육지원청|교육청|교육감|심의위원회|교권보호위원회|전담조사관|교육장/ },
   { k: 'outside', name: '외부 기관', re: /경찰|112|119|아동보호|보건소|수사|법원|공제회|정신건강|센터|병원|구급|지자체|시·군|질병관리|개인정보보호위원회|검사/ },
-  { k: 'family', name: '보호자·학생', re: /보호자|학부모|부모|학생|피해|가해|본인/ }
+  { k: 'family', name: '보호자·학생', re: /보호자|학부모|부모|학생|피해자 측|가해자 측|정보주체/ }
 ];
 function laneOf(who){
   const w = String(who || '');
@@ -614,7 +670,7 @@ function renderCase(id){
         <div class="flow" id="flow" style="grid-template-columns:128px repeat(${phasesUsed.length}, minmax(${phasesUsed.length > 5 ? 150 : 180}px, 1fr));min-width:${128 + phasesUsed.length * (phasesUsed.length > 5 ? 150 : 180)}px">
           <div class="corner">누가 \\ 언제</div>
           ${phasesUsed.map(pi => `<div class="ch"><b>${PHASES[pi].name}</b>${PHASES[pi].sub}</div>`).join('')}
-          ${lanesUsed.map(ln => `<div class="lh">${ln.name}</div>${phasesUsed.map((pi, k) => `<div class="cell ${k === phasesUsed.length - 1 ? 'last' : ''}">${L.filter(x => x.lane === ln.k && x.phase === pi).map(x => `<div class="node" role="button" tabindex="0" data-n="${x.i}"><div class="nh"><span>S${String(x.i + 1).padStart(2, '0')}</span><span class="st"></span></div><div class="nt">${esc(x.s.what)}</div></div>`).join('')}</div>`).join('')}`).join('')}
+          ${lanesUsed.map(ln => `<div class="lh">${ln.name}</div>${phasesUsed.map((pi, k) => `<div class="cell ${k === phasesUsed.length - 1 ? 'last' : ''}">${L.filter(x => x.lane === ln.k && x.phase === pi).map(x => `<div class="node" role="button" tabindex="0" data-n="${x.i}"><div class="nh"><span>S${String(x.i + 1).padStart(2, '0')}</span><span class="st"></span></div><div class="nt">${esc(x.s.what)}</div>${(x.s.how || []).length ? `<span class="nx">하는 법 ${x.s.how.length}가지</span>` : ''}</div>`).join('')}</div>`).join('')}`).join('')}
           <svg class="arrows" id="arrows"></svg>
         </div>
       </div>
@@ -623,10 +679,10 @@ function renderCase(id){
     <ol class="steps" id="steplist" style="display:none"></ol>` : '';
   const flowRight = L.length ? `<div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><div class="legend"><span><i class="lg-done"></i>한 일</span><span><i class="lg-now"></i>지금 할 일</span><span><i class="lg-wait"></i>남은 일</span></div><div class="seg" id="viewseg"><button data-view="flow">흐름도</button><button data-view="list">목록</button></div></div>` : '';
 
-  const flowSec = (sec('flow', '업무 흐름도', flowHtml, `${c.steps.length}단계 · 단계를 눌러 자세히 보고, 끝낸 일은 체크하세요. 체크는 이 기기에만 남습니다.`, flowRight));
+  const flowSec = (sec('flow', '업무 흐름도', flowHtml, `${c.steps.length}단계 · 칸에 마우스를 올리면 요약, 누르면 하는 법까지 나옵니다. 끝낸 일은 체크하세요. 체크는 이 기기에만 남습니다.`, flowRight));
 
   if (c.deep && c.deep.length) main.push(sec('deep', '과정별 깊이 보기', `<div class="card deep">${c.deep.map((d, i) => `<details ${i === 0 ? 'open' : ''}><summary><span class="dn">${String(i + 1).padStart(2, '0')}</span>${esc(d.title)}</summary><div class="db">${(Array.isArray(d.body) ? d.body : [d.body]).map(p => `<p>${esc(p)}</p>`).join('')}${d.basis ? `<p class="bs">근거 ${esc(d.basis)}</p>` : ''}</div></details>`).join('')}</div>`, '조사·심의·결정·불복까지 과정마다 실제로 어떻게 진행되는지'));
-  if (c.tables && c.tables.length) main.push(sec('tables', '한눈에 보는 표', c.tables.map(t => `<div class="card xt"><div class="xth">${esc(t.title)}</div><div class="xtw"><table class="t"><thead><tr>${(t.head || []).map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${(t.rows || []).map(r => `<tr>${r.map((v, j) => `<td${j === 0 ? ' class="k0"' : ''}>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${t.note ? `<div class="xtn">${esc(t.note)}</div>` : ''}</div>`).join('')));
+  if (c.tables && c.tables.length) main.push(sec('tables', '한눈에 보는 표', c.tables.map(t => `<div class="card xt"><div class="xth">${esc(t.title)}</div><div class="xtw"><table class="t"><thead><tr>${(t.head || []).map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${(t.rows || []).map(r => `<tr>${r.map((v, j) => `<td data-h="${esc((t.head || [])[j] || '')}"${j === 0 ? ' class="k0"' : ''}>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${t.note ? `<div class="xtn">${esc(t.note)}</div>` : ''}</div>`).join('')));
   if (dlN) main.push(sec('deadlines', '기한', `<div class="card"><div class="calc"><b>알게 된 때</b><input type="datetime-local" id="base"><span class="hint">넣으면 실제 날짜로 계산합니다</span></div><table class="t"><thead><tr><th>무엇을</th><th>기한</th><th>날짜</th></tr></thead><tbody>${c.deadlines.map((d, i) => `<tr><td>${esc(d.what)}${d.basis ? `<span class="bs">${esc(d.basis)}</span>` : ''}</td><td class="lim">${esc(d.limit)}</td><td class="due" data-d="${i}"></td></tr>`).join('')}</tbody></table></div>`));
   if (c.dont && c.dont.length) main.push(sec('dont', '하지 말 것', `<div class="card dont"><ul>${c.dont.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>`, '현장에서 자주 생기는 실수'));
   if (c.faq && c.faq.length) main.push(sec('faq', '자주 묻는 질문', `<div class="card">${c.faq.map(f => `<details class="faq"><summary>${esc(f.q)}</summary><div class="a">${esc(f.a)}</div></details>`).join('')}</div>`));
@@ -664,7 +720,7 @@ function renderCase(id){
       <div class="kpi"><b class="num" id="kdone">0</b><span>체크한 단계</span></div>
       ${(c.uncertain||[]).length ? `<div class="kpi w"><b class="num">${c.uncertain.length}</b><span>현장 확인 필요</span></div>` : ''}
     </div>
-    ${c.first && c.first.length ? `<div class="now" id="s-now"><div class="h">지금 당장<small>흐름도보다 먼저</small></div><ol>${c.first.map(x => `<li>${esc(x)}</li>`).join('')}</ol></div>` : ''}
+    ${c.first && c.first.length ? `<div class="nowbox" id="s-now"><div class="h">지금 당장<small>흐름도보다 먼저</small></div><ol>${c.first.map(x => `<li>${esc(x)}</li>`).join('')}</ol></div>` : ''}
     ${flowSec}
     <div class="cols">
       <div>${main.join('')}</div>
@@ -702,7 +758,7 @@ function renderCase(id){
     if (i == null){ i = L.findIndex(x => !done[x.i]); if (i < 0) i = 0; }
     const x = L[i]; if (!x) { box.innerHTML = ''; return; }
     const s = x.s;
-    box.innerHTML = `<div class="nd-l"><div class="k">S${String(i + 1).padStart(2, '0')} · ${esc(PHASES[x.phase].name)}${flowState.sel == null ? ' · 지금 할 일' : ''}</div><h3>${esc(s.what)}</h3>${s.detail ? `<p class="det">${esc(s.detail)}</p>` : ''}
+    box.innerHTML = `<div class="nd-l"><div class="k">S${String(i + 1).padStart(2, '0')} · ${esc(PHASES[x.phase].name)}${flowState.sel == null ? ' · 지금 할 일' : ''}</div><h3>${esc(s.what)}</h3>${s.detail ? `<p class="det">${esc(s.detail)}</p>` : ''}${stepExtra(s, true)}
       <label class="chk"><input type="checkbox" id="ndchk" ${done[i] ? 'checked' : ''}> 이 단계를 마쳤습니다</label></div>
       <div class="nd-r"><dl><dt>언제</dt><dd>${esc(s.when || '-')}</dd><dt>누가</dt><dd>${esc(s.who || '-')}</dd><dt>근거</dt><dd>${esc(s.basis || '매뉴얼 절차')}</dd></dl></div>`;
     document.getElementById('ndchk').addEventListener('change', e => setDone(i, e.target.checked));
@@ -714,12 +770,38 @@ function renderCase(id){
     L.forEach(x => {
       if (x.phase !== lastP){ html += `<li class="pgrp">${PHASES[x.phase].name} · ${PHASES[x.phase].sub}</li>`; lastP = x.phase; }
       const s = x.s;
-      html += `<li class="step ${done[x.i] ? 'done' : ''} ${firstOpen === x.i ? 'now' : ''}"><input type="checkbox" data-i="${x.i}" ${done[x.i] ? 'checked' : ''} aria-label="${x.i + 1}단계 완료"><div><span class="sn">S${String(x.i + 1).padStart(2, '0')}${firstOpen === x.i ? ' · 지금' : ''}</span>${s.who ? `<span class="who">${esc(s.who)}</span>` : ''}<div class="what">${esc(s.what)}</div>${s.detail ? `<div class="det">${esc(s.detail)}</div>` : ''}<div class="bs">${esc(s.when || '')}${s.basis ? ' · 근거 ' + esc(s.basis) : ''}</div></div></li>`;
+      html += `<li class="step ${done[x.i] ? 'done' : ''} ${firstOpen === x.i ? 'now' : ''}"><input type="checkbox" data-i="${x.i}" ${done[x.i] ? 'checked' : ''} aria-label="${x.i + 1}단계 완료"><div><span class="sn">S${String(x.i + 1).padStart(2, '0')}${firstOpen === x.i ? ' · 지금' : ''}</span>${s.who ? `<span class="who">${esc(s.who)}</span>` : ''}<div class="what">${esc(s.what)}</div>${s.detail ? `<div class="det">${esc(s.detail)}</div>` : ''}${stepExtra(s)}<div class="bs">${esc(s.when || '')}${s.basis ? ' · 근거 ' + esc(s.basis) : ''}</div></div></li>`;
     });
     ol.innerHTML = html;
     ol.querySelectorAll('input').forEach(el => el.addEventListener('change', () => setDone(+el.dataset.i, el.checked)));
   }
-  $app.querySelectorAll('.node').forEach(n => { const go = () => { const i = +n.dataset.n; flowState.sel = flowState.sel === i ? null : i; paint(); }; n.addEventListener('click', go); n.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } }); });
+  $app.querySelectorAll('.node').forEach(n => {
+    const i = +n.dataset.n;
+    const go = () => { hideTip(); openDrawer(i); };
+    n.addEventListener('click', go);
+    n.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    n.addEventListener('mouseenter', () => showTip(n, L[i].s, i));
+    n.addEventListener('mouseleave', hideTip);
+  });
+  function openDrawer(i){
+    const x = L[i]; if (!x) return;
+    const s = x.s, done = getDone();
+    flowState.sel = i; paint();
+    const dr = document.getElementById('drawer'), bg = document.getElementById('drawerbg');
+    dr.innerHTML = `<div class="dh"><span class="k">S${String(i + 1).padStart(2, '0')} · ${esc(PHASES[x.phase].name)} · ${i + 1}/${L.length}</span><button class="x" aria-label="닫기">×</button></div>
+      <div class="dbody"><h3>${esc(s.what)}</h3>${s.detail ? `<p class="det">${esc(s.detail)}</p>` : ''}${stepExtra(s, true)}
+      <dl><dt>언제</dt><dd>${esc(s.when || '-')}</dd><dt>누가</dt><dd>${esc(s.who || '-')}</dd><dt>근거</dt><dd>${esc(s.basis || '매뉴얼 절차')}</dd></dl></div>
+      <div class="df"><label class="chk"><input type="checkbox" id="drchk" ${done[i] ? 'checked' : ''}> 마쳤습니다</label><button class="btn" id="drprev" ${i ? '' : 'disabled'}>← 앞</button><button class="btn dark" id="drnext" ${i < L.length - 1 ? '' : 'disabled'}>다음 →</button></div>`;
+    dr.classList.add('on'); bg.classList.add('on');
+    const close = () => { dr.classList.remove('on'); bg.classList.remove('on'); flowState.sel = null; paint(); };
+    dr.querySelector('.x').onclick = close; bg.onclick = close;
+    document.getElementById('drchk').onchange = e => { setDone(i, e.target.checked); };
+    document.getElementById('drprev').onclick = () => openDrawer(i - 1);
+    document.getElementById('drnext').onclick = () => openDrawer(i + 1);
+    dr.querySelector('.dbody').scrollTop = 0;
+    document.onkeydown = e => { if (e.key === 'Escape' && dr.classList.contains('on')) close(); };
+  }
+  flowState.open = openDrawer;
   // 보기 전환
   const setView = v => {
     const fb = document.getElementById('flowbox'), sl = document.getElementById('steplist');
@@ -769,11 +851,33 @@ function renderCase(id){
   document.getElementById('mclear').addEventListener('click', () => { ta.value = ''; store.sdel(mk); toast('메모를 지웠습니다.'); });
   window.scrollTo(0, 0);
   requestAnimationFrame(drawArrows);
+  const fl = document.getElementById('flow'); if (flowRO && fl){ flowRO.disconnect(); flowRO.observe(fl); }
 }
+// 마우스 말풍선(마우스가 있는 기기만)
+const canHover = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+function showTip(el, s, i){
+  if (!canHover) return;
+  const t = document.getElementById('tip');
+  const how = (s.how || []).slice(0, 4);
+  t.innerHTML = `<b>S${String(i + 1).padStart(2, '0')} ${esc(s.what)}</b><div class="tw">${esc([s.when, s.who].filter(Boolean).join(' · '))}</div>${s.detail ? esc(s.detail) : ''}${how.length ? `<ol>${how.map(h => `<li>${esc(h)}</li>`).join('')}</ol>` : ''}<div class="more">눌러서 자세히 보기</div>`;
+  const r = el.getBoundingClientRect();
+  t.classList.add('on');
+  const tw = t.offsetWidth, th = t.offsetHeight;
+  let x = r.right + 10, y = r.top;
+  if (x + tw > innerWidth - 8) x = r.left - tw - 10;
+  if (x < 8) x = Math.min(innerWidth - tw - 8, Math.max(8, r.left));
+  if (y + th > innerHeight - 8) y = Math.max(8, innerHeight - th - 8);
+  t.style.left = x + 'px'; t.style.top = y + 'px';
+}
+function hideTip(){ const t = document.getElementById('tip'); if (t) t.classList.remove('on'); }
+window.addEventListener('scroll', hideTip, { passive: true });
 // 흐름도 화살표: 단계 번호 순서대로 잇는다
 function drawArrows(){
   const flow = document.getElementById('flow'), svg = document.getElementById('arrows');
   if (!flow || !svg || !flowState || flow.offsetParent === null) return;
+  const sc = document.getElementById('flowscroll');
+  // 화면에 다 들어오면 머리 줄을 붙여 둔다(내려도 단계 이름이 보이게)
+  sc.classList.remove('fit'); if (flow.scrollWidth <= sc.clientWidth + 1) sc.classList.add('fit');
   const fr = flow.getBoundingClientRect();
   const R = i => { const n = flow.querySelector(`.node[data-n="${i}"]`); if (!n) return null; const r = n.getBoundingClientRect(); return { l: r.left - fr.left, r: r.right - fr.left, t: r.top - fr.top, b: r.bottom - fr.top, cx: (r.left + r.right) / 2 - fr.left, cy: (r.top + r.bottom) / 2 - fr.top }; };
   svg.setAttribute('width', fr.width); svg.setAttribute('height', fr.height);
@@ -793,8 +897,19 @@ function drawArrows(){
   svg.innerHTML = `<defs><marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 L8 5 L0 9z" fill="#8FA3BF"/></marker></defs>` +
     d.split('M').filter(Boolean).map(p => `<path d="M${p}" fill="none" stroke="#A9B8CC" stroke-width="1.4" stroke-linejoin="round" marker-end="url(#ah)"/>`).join('');
 }
-window.addEventListener('resize', () => { clearTimeout(drawArrows._t); drawArrows._t = setTimeout(drawArrows, 80); });
+const redraw = () => { clearTimeout(drawArrows._t); drawArrows._t = setTimeout(drawArrows, 60); };
+window.addEventListener('resize', redraw);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(redraw);
+const flowRO = window.ResizeObserver ? new ResizeObserver(redraw) : null;
 
+function stepExtra(s, lbl){
+  let h = '';
+  if (s.how && s.how.length) h += `${lbl ? '<div class="lbl2">하는 법</div>' : ''}<ol class="how">${s.how.map(x => `<li>${esc(x)}</li>`).join('')}</ol>`;
+  if (s.check && s.check.length) h += `<div class="xrow ck"><b>놓치기 쉬움</b><span>${s.check.map(esc).join(' · ')}</span></div>`;
+  if (s.form) h += `<div class="xrow"><b>서식</b><span>${esc(s.form)}</span></div>`;
+  if (s.neis) h += `<div class="xrow"><b>나이스</b><span>${esc(s.neis)}</span></div>`;
+  return h;
+}
 function memoTemplate(){
   return '일시:\n장소:\n관련 학생(이니셜):\n알게 된 경위:\n학생이 한 말(들은 그대로):\n본 것:\n한 조치와 시각:\n연락한 곳·사람:';
 }
@@ -845,6 +960,7 @@ function renderAbout(){
 /* ---------- 길 ---------- */
 function route(){
   const h = location.hash || '#/';
+  hideTip(); document.getElementById('drawer').classList.remove('on'); document.getElementById('drawerbg').classList.remove('on');
   let nav = 'home';
   if (h.startsWith('#/c/')) { renderCase(decodeURIComponent(h.slice(4))); nav = ''; }
   else if (h === '#/contacts') { renderContacts(); nav = 'contacts'; }

@@ -17,6 +17,8 @@ for (const f of files) {
   if (!['즉시', '당일', '며칠 안'].includes(c.urgency)) problems.push(`${f}: 긴급도 «${c.urgency}»`);
   const old = (c.sources || []).filter(s => s.year && +s.year < 2021);
   if (old.length) problems.push(`${f}: 5년 넘은 출처 ${old.map(s => s.title + '(' + s.year + ')').join(', ')}`);
+  // 학생·학부모도 보는 공개 사이트라 보호자 응대 대본(script)은 싣지 않는다
+  (c.steps || []).forEach(st => { delete st.script; });
   if (cfg.patch[c.id]) Object.assign(c, cfg.patch[c.id]);
   c.related = cfg.related[c.id] || c.related || [];
   cases.push(c);

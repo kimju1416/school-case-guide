@@ -1033,7 +1033,7 @@ function route(){
   const c = h.startsWith('#/c/') && BYID[decodeURIComponent(h.slice(4))];
   document.title = c ? c.title + ' · 학교 사안 처리 길잡이' : '학교 사안 처리 길잡이';
 }
-document.getElementById('foot').innerHTML = `<div class="fr"><div>법령·교육부 매뉴얼 원문을 요약한 참고 자료입니다. 최종 판단은 원문과 소속 교육청 안내를 따르세요.<br>기준일 ${esc(DATA.updated)} · <a href="#/about">출처와 안내</a></div><a class="insta" href="https://www.instagram.com/kimju.zip/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>@kimju.zip</a></div>`;
+document.getElementById('foot').innerHTML = `<div class="fr"><div>법령·교육부 매뉴얼 원문을 요약한 참고 자료입니다. 최종 판단은 원문과 소속 교육청 안내를 따르세요.<br>기준일 ${esc(DATA.updated)} · <a href="#/about">출처와 안내</a></div><a class="insta" href="https://www.instagram.com/kimju.zip/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>kimju.zip</a></div>`;
 window.addEventListener('hashchange', route);
 route();
 })();

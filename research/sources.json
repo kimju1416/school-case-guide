@@ -49,13 +49,6 @@
     "topic": "교육활동 보호"
   },
   {
-    "title": "경상북도교육청 교육활동보호센터 누리집 (경북교육청 예시 — 시·도마다 센터를 따로 운영하므로 소속 시·도교육청 센터 확인)",
-    "publisher": "경상북도교육청",
-    "year": 2026,
-    "url": "https://www.gbe.kr/tprotect/main.do",
-    "topic": "교육활동 보호"
-  },
-  {
     "title": "교원의 학생생활지도에 관한 고시 (교육부고시 제2026-3호, 시행 2026.3.1.)",
     "publisher": "교육부(국가법령정보센터)",
     "year": 2026,
@@ -106,7 +99,7 @@
   },
   {
     "title": "2026년 학생정서·행동특성검사 및 관리 매뉴얼",
-    "publisher": "교육부·학생마음건강중앙지원단",
+    "publisher": "교육부·한국교육환경보호원(학생마음건강중앙지원단)",
     "year": 2026,
     "url": "https://www.smhrc.kr/dataCenter/dataView?dataId=536",
     "topic": "자살예방"
@@ -204,7 +197,7 @@
   },
   {
     "title": "「교육시설 재난」 및 「학생재난 피해 분야」 현장조치 행동매뉴얼 (관리번호 사회재난-33, 2025.7.)",
-    "publisher": "경기도교육청 게시",
+    "publisher": "경기도교육청",
     "year": 2025,
     "url": "https://www.goe.go.kr/resource/goe/na/bbs_2530/2025/07/953cb6bd-1aec-4bb9-82c6-4339fe3ef56a.pdf",
     "topic": "재난"
